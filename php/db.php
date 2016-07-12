@@ -1,10 +1,10 @@
 <?php
 class dbMySQL{
 	//parametros de conexion a la db
-	private $host = "localhost";
-	private $usuario="regazmpq_duser";
-	private $clave = "cy(N7g8%Iq-a";
-	private $db = "regazmpq_dice";
+	private $host = "";//your host
+	private $usuario="";//your user
+	private $clave = "";//your password
+	private $db = "";//your db
 	private $conn;
 		//funcion constructora
 	public function __construct (){
