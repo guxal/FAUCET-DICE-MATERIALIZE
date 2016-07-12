@@ -153,11 +153,7 @@ if(isset($_SESSION["cow"])){
 	<label for="icon_prefix">Tu Wallet</label>
 	</div>
 	</div>
-	<div class="card black">
-		<br>
-		<br>
-		<br>
-	</div>
+	<!--ADS ADS ADS -->
 	<div class="g-recaptcha" data-sitekey="<?php echo $rkey ?>"></div>
 	<button type="submit" name="envia" id="envia" value="1" class="waves-effect btn <?=$c_btn1?>">send</button>
 	<input type="hidden" name="vc" value="1" />
@@ -216,10 +212,7 @@ if(isset($_SESSION["cow"])){
 	
 	 
 	</form>
-		<div class="card black">
-			<br>
-			<br>
-		</div>
+		<!--ADS ADS ADS -->
 
 </div>
 	<!--COBRO-->
