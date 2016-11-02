@@ -1,3 +1,4 @@
+<!--PHP-->
 <?php
 if(isset($_GET['pos'])){
  	$inicio=$_GET['pos'];
@@ -47,16 +48,19 @@ $c_Panel=$db->design("c_Panel");
 $c_btnd1=$db->design("c_btnd1");
 $c_btnd2=$db->design("c_btnd2");
 ?>
+<!--/.PHP-->
 <!doctype html>
 <html>
 <head>
 	<title>Faucet + Dice</title>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0 maximun-scale=1.0, user-scalable=no"/>
+<!--MATERIALIZE LIB-->
 	<link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 	<link rel="stylesheet" type="text/css" href="css/materialize.min.css" media="screen,projection">
+<!--/.MATERIALIZE LIB-->
 	<script type="text/javascript" src="js/validacion.js"></script>
-	
+
   <style type="text/css">
   	html,body{
       height: 100%;
@@ -82,58 +86,66 @@ $c_btnd2=$db->design("c_btnd2");
       padding-bottom:258px;
       padding:0;
     }
-		#rollHi>i{
-			transform:rotate(180deg);					
-			}
+	#rollHi>i{
+		transform:rotate(180deg);					
+		}
     footer{
       position: relative;
     }
-		iframe{
-			width:270px;
-		}
-		.g-recaptcha div{
-			width:270px!important;
-		}
+	iframe{
+		width:270px;
+	}
+	.g-recaptcha div{
+		width:270px!important;
+	}
 	</style>
 <script src='https://www.google.com/recaptcha/api.js'></script>
 </head>
 <body>
 <div class="content" id="content">
-<header><?php include "php/navegacion.php" ?></header>
-<section id="contenedor-principal" class="col s12">
-	<div class="row">
-	<section class="col s12 m12 l9" id="content1">
-		<div class="card-panel <?=$c_Subheader?> align center">
-			<h6 style="font-size:2em;"><?php print $subtitulo; ?></h6>
-		</div>
-		<div class="align center">
-			<?php
-	if($n!=0){
-		print "<ul class='pagination'>";
-		$anterior=$inicio-1;
-    $p="<li "; 
-		if($inicio==1) $p.= "class='disabled'";
-		$p.=" >";
-		$p.="<a href='/?pos=".$anterior."'><i class='material-icons'>chevron_left</i></a></li>";
-	for($i=1;$i<=$v;$i++){
-		$p.="<li ";
-		if($inicio==$i){
-				$p.="class='active ".$c_Header."'";
-		} 
-		$p.=" >";
-		$p.="<a href='/?pos=".$i."'>".$i."</a></li>";
-		}
-    $p.="<li class='waves-effect";
-		if($inicio==$v) $p.=" disabled";
-		$proximo=$inicio+1;
-		$p.=" '><a href='/?pos=".$proximo."'><i class='material-icons'>chevron_right</i></a></li>";
-		print $p;
-  	print "</ul>";
-		}else{
-		print "No articles";
-		print "<br><a href ='admon/'>Admin</a>";
-	}
-		print "</div>";
+	<!--CABECERA-->
+	<header>
+		<?php include "php/navegacion.php" ?>
+	</header>
+	<!--/.CABECERA-->
+	<section id="contenedor-principal" class="col s12">
+		<div class="row">
+			<section class="col s12 m12 l9" id="content1">
+				<div class="card-panel <?=$c_Subheader?> align center">
+					<h6 style="font-size:2em;"><?php print $subtitulo; ?></h6>
+				</div>
+				<div class="align center">
+				<?php
+				if($n!=0){
+					print "<ul class='pagination'>";
+					$anterior=$inicio-1;
+    				$p="<li "; 
+					
+					if($inicio==1) $p.= "class='disabled'";
+					
+					$p.=" >";
+					$p.="<a href='/?pos=".$anterior."'><i class='material-icons'>chevron_left</i></a></li>";
+					for($i=1;$i<=$v;$i++){
+						$p.="<li ";
+						if($inicio==$i){
+							$p.="class='active ".$c_Header."'";
+						} 
+						$p.=" >";
+						$p.="<a href='/?pos=".$i."'>".$i."</a></li>";
+					}
+    				$p.="<li class='waves-effect";
+						
+					if($inicio==$v) $p.=" disabled";
+						
+					$proximo=$inicio+1;
+					$p.=" '><a href='/?pos=".$proximo."'><i class='material-icons'>chevron_right</i></a></li>";
+					print $p;
+  					print "</ul>";
+				}else{
+					print "No articles";
+					print "<br><a href ='admon/'>Admin</a>";
+				}
+				print "</div>";
 	
 			print "<div class='row'>";
 			$loop=0;
